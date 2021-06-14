@@ -18,6 +18,7 @@ import pro.belbix.ethparser.repositories.v0.HardWorkRepository;
 import pro.belbix.ethparser.repositories.v0.HarvestRepository;
 import pro.belbix.ethparser.utils.Caller;
 import pro.belbix.ethparser.web3.contracts.ContractUtils;
+import pro.belbix.ethparser.web3.harvest.log.IdleTimeService;
 import pro.belbix.ethparser.web3.prices.PriceProvider;
 
 @Service
@@ -34,7 +35,7 @@ public class HardWorkDbService {
 
   public HardWorkDbService(HardWorkRepository hardWorkRepository,
       HarvestRepository harvestRepository,
-      AppProperties appProperties, PriceProvider priceProvider) {
+      AppProperties appProperties, PriceProvider priceProvider, IdleTimeService idleTimeService) {
     this.hardWorkRepository = hardWorkRepository;
     this.harvestRepository = harvestRepository;
     this.appProperties = appProperties;
